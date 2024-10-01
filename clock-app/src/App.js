@@ -1,7 +1,12 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Clock from "./Clock.js";
 
 function App() {
+  useEffect(() => {
+    document.title = "Clock App";
+  }, []);
+
   const [time, setTime] = useState(new Date());
 
   setInterval(() => {
@@ -13,16 +18,6 @@ function App() {
       <h1>Current Time</h1>
       <Clock time={time} />
     </div>
-  );
-}
-
-function Clock(props) {
-  const { time } = props;
-
-  return (
-    <p>
-      {time.getHours()}:{time.getMinutes()}:{time.getSeconds()}
-    </p>
   );
 }
 
