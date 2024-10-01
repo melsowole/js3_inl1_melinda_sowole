@@ -1,12 +1,8 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Clock from "./Clock.js";
 
 function App() {
-  useEffect(() => {
-    document.title = "Clock App";
-  }, []);
-
   const [time, setTime] = useState(new Date());
 
   setInterval(() => {
